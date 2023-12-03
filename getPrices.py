@@ -1,6 +1,8 @@
 def getPrices():
-  price = []
+  result = dict()
   for i in range(0,len(resp["result"])): 
     test = resp["result"][i]
-    price.append(test["rateCard"])
-  print(price)
+    price = test["rateCard"]
+    location = test["name"]
+    result.update({location : price})
+  print(result)
