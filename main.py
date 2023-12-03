@@ -1,3 +1,4 @@
+from parkingSpot import parkingSpot
 import requests
 
 HASH_TOKEN = 'ZHUzemJnNzFzaHxWN0o0YUZja21QOXZrZUFOTjY4QTY2dnlPWE92TUFyYThZMm5COTYz'
@@ -22,8 +23,6 @@ def get_token():
         token = data['result']['token']
         print("hi")
         return token
-    
-
     except requests.exceptions.RequestException as e:
         return f'Request failed with error: {e}', None
     except (KeyError, ValueError) as e:
@@ -43,5 +42,3 @@ response = requests.request("GET", url, headers=headers)
 # print(response.text)
 
 resp = response.json()
-# print(resp["result"][0])
-print(resp["count"])
