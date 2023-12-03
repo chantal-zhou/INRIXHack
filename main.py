@@ -13,15 +13,12 @@ def get_token():
     }
     # Make the request to the INRIX token endpoint
     try:
-        print("Getting Token")
         response = requests.get("https://api.iq.inrix.com/auth/v1/appToken?appId=du3zbg71sh&hashToken=ZHUzemJnNzFzaHxWN0o0YUZja21QOXZrZUFOTjY4QTY2dnlPWE92TUFyYThZMm5COTYz")
         response.raise_for_status()  # Raise HTTPError for bad responses
-        print("Got Token")
         data = response.json()
         # Extract the token from the response
         # For more info on how to parse the response, see the json_parser_example.py file
         token = data['result']['token']
-        print("hi")
         return token
     except requests.exceptions.RequestException as e:
         return f'Request failed with error: {e}', None
