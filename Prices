@@ -1,0 +1,6 @@
+price = []
+for i in range(0,len(resp["result"])): 
+  test = resp["result"][i]
+  price.append(test["rateCard"])
+
+print(price)
