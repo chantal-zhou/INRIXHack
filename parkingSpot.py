@@ -19,10 +19,10 @@ def getCostIndex(resp):
     return costs
 
 def getPrices(resp):
-        prices = {}
-        for spot in resp["result"]:
-            prices.update({spot["name"] : spot["rateCard"]})
-        return prices
+    prices = {}
+    for spot in resp["result"]:
+        prices.update({spot["name"] : spot["rateCard"]})
+    return prices
 
 def getAvailabilities(resp):
     available = {}
