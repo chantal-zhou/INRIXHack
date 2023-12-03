@@ -1,4 +1,4 @@
-from parkingSpot import parkingSpot
+from parkingSpot import *
 import requests
 from utils import *
 
@@ -41,5 +41,5 @@ response = requests.request("GET", url, headers=headers)
 
 resp = response.json()
 
-spot = parkingSpot()
-write_to_file(spot.getCoordinates(resp), 'coordinates')
+write_to_file(getCoordinates(resp), 'coordinates')
+print(sort_by_lowest(getDistances(resp, [0,0])))
